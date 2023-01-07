@@ -50,18 +50,9 @@ function draw() {
 
   //collision with wall
   // circle(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 50);
-  if (barPerson.collisionCheck(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 25) == true){
-    // circle(10,10,10,10);
-    barPerson.allowMovement = false;
-  } else {
-    barPerson.allowMovement = true;
-  }
-
-  if (surgeon.collisionCheck(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 25) == true){
-    surgeon.allowMovement =  false;
-  } else {
-    surgeon.allowMovement = true;
-  }
-
-
+  
+  wallCollisionCheck();
+  
 }
+
+
