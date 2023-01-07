@@ -6,6 +6,7 @@ class Wall {
         this.y = y;
     }
     display() {
+        rectMode(CENTER);
         fill(165,42,42);
         rect(this.x, this.y, this.width, this.height);
     }
