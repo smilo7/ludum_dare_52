@@ -49,6 +49,11 @@ class Player {
       }
       
     }
+
+    operate(){
+        kidneyCount++;
+    }
+
   }
 
 
