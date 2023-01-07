@@ -7,14 +7,19 @@ let surgeon;
 let dividerWall;
 let testCustomer;
 
+let playerImage;
+function preload() {
+  playerImage = loadImage('assets/surgeon.png');
+}
+
 function setup() {
   // put setup code here
   createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
-  
+  noSmooth();
   frameRate(30);
 
-  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 50, {r:255, g:0, b:0})
-  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, 50, {r:0, g:255, b:0})
+  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 100, 100, playerImage)
+  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, 100, 100, playerImage)
   
   dividerWall = new Wall(SCREEN_WIDTH * 1/2, 0, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
   testCustomer = new Customer(SCREEN_WIDTH, SCREEN_HEIGHT * 1/2, 40, {r:125, g:41, b:171})
@@ -32,7 +37,11 @@ function draw() {
   dividerWall.display();
 
   updatePlayers();
+  
 }
+
+
+
 
 function updatePlayers() {
   barPerson.display();
