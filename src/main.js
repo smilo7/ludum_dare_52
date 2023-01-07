@@ -16,6 +16,7 @@ function setup() {
   // put setup code here
   createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
   noSmooth();
+  imageMode(CENTER);
   frameRate(30);
 
   barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 100, 100, playerImage)
