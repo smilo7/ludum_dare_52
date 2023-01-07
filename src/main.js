@@ -2,6 +2,8 @@ const SCREEN_WIDTH = 1000;
 const SCREEN_HEIGHT = 500;
 const FPS = 30;
 
+let kidneyCount = 0;
+
 let timer = 0;
 
 let barPerson;
@@ -52,7 +54,18 @@ function draw() {
   // circle(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 50);
   
   wallCollisionCheck();
-  
+
+  displayKidneyCount();
 }
 
 
+function displayKidneyCount(){
+  
+  fill(100,100,100);
+  // rectMode(CENTER);
+  rect(SCREEN_WIDTH/2, 35, 100, 50)
+
+  textSize(32);
+  fill(255,0,0);
+  text(kidneyCount, SCREEN_WIDTH/2, 50);
+}
