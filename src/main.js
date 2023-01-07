@@ -15,8 +15,12 @@ function draw() {
 
   const player1 = new Player(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 50, {r:255, g:0, b:0})
   const player2 = new Player(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, 50, {r:0, g:255, b:0})
+  const dividerWall = new Wall(SCREEN_WIDTH * 1/2, 0, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
+  const testCustomer = new Customer(SCREEN_WIDTH, SCREEN_HEIGHT * 1/2, 40, {r:125, g:41, b:171})
+  testCustomer.display()
   player1.display()
   player2.display()
+  dividerWall.display()
 }
   
 class Player {
@@ -32,4 +36,6 @@ class Player {
     circle(this.x, this.y, this.diameter)
   }
 }
+
+
 
