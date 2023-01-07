@@ -10,8 +10,15 @@ class Player {
     display() {
       image(this.image, this.x, this.y, this.width, this.height);
     }
-  
-   
+
+    collisionCheck(x, y, radius) {
+      let d = dist(x, y, this.x, this.y);
+      if (radius + (this.width * 0.7 *0.5) < d) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
   
   class BarPerson extends Player {
