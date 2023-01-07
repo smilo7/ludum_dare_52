@@ -9,7 +9,8 @@ let testCustomer;
 
 let playerImage;
 function preload() {
-  playerImage = loadImage('assets/surgeon.png');
+  surgeonImage = loadImage('assets/surgeon.png');
+  barPersonImage = loadImage('assets/barman.png');
 }
 
 function setup() {
@@ -19,8 +20,8 @@ function setup() {
   imageMode(CENTER);
   frameRate(30);
 
-  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 100, 100, playerImage)
-  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, 100, 100, playerImage)
+  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, 100, 100, barPersonImage)
+  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, 100, 100, surgeonImage)
   
   dividerWall = new Wall(SCREEN_WIDTH * 1/2, 0, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
   testCustomer = new Customer(SCREEN_WIDTH, SCREEN_HEIGHT * 1/2, 40, {r:125, g:41, b:171})
