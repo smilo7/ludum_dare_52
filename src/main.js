@@ -14,7 +14,8 @@ let customers = [];
 
 let playerImage;
 function preload() {
-  playerImage = loadImage('assets/surgeon.png');
+  surgeonImage = loadImage('assets/surgeon.png');
+  barPersonImage = loadImage('assets/barman.png');
 }
 
 function setup() {
