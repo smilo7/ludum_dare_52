@@ -19,7 +19,6 @@ function preload() {
 }
 
 function setup() {
-  // put setup code here
   createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
   noSmooth();
   imageMode(CENTER);
@@ -28,8 +27,8 @@ function setup() {
   const playerWidth= 100;
   const playerHeight = 100;
 
-  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, playerWidth, playerHeight, playerImage)
-  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, playerWidth, playerHeight, playerImage)
+  barPerson = new BarPerson(SCREEN_WIDTH * 1/4, SCREEN_HEIGHT * 1/3, playerWidth, playerHeight, barPersonImage)
+  surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, playerWidth, playerHeight, surgeonImage)
   
   dividerWall = new Wall(SCREEN_WIDTH * 1/2, 0, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
 }
