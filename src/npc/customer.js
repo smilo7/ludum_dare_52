@@ -2,23 +2,22 @@ class Customer extends NPC {
 
     display() {
         fill(this.colour.r, this.colour.g, this.colour.b); 
-
-        // let positions = [1, 3, 5, 7];
-        // let position = random(positions);
-
         circle(this.x, this.y, this.diameter);
       }
   }
 
-function updateCustomers(){
+function displayCustomers(){
     if (customers.length !== 0){
       for (let i = 0; i<customers.length; i++){
-        customers[i].display();
+        // only update the customer at the position at the bar if they exist!
+        if (customers[i] !== null){
+          customers[i].display();
+        }
       }
     }
   }
 
-function chooseRandomCustomerPos(){
+function chooseRandomCustomerPos(i){
 
     let y = SCREEN_HEIGHT * 1/2
   
@@ -29,13 +28,19 @@ function chooseRandomCustomerPos(){
       [7/16 * SCREEN_WIDTH, y],
     ]
     
-    return random(Object.values(leftScreenXPositions))
+    return leftScreenXPositions[i]
   }
 
 function spawnCustomer(){
-    const coords = chooseRandomCustomerPos();
-    console.log(coords)
-  
-    customers.push(new Customer(coords[0], coords[1], 40, {r:125, g:41, b:171}))
+
+    // generate random int to get coordinate position
+    // and the position in the customer array
+    const randomPositionInt = int(random(0, customers.length));
+    const coords = chooseRandomCustomerPos(randomPositionInt);
+    if (customers[randomPositionInt] === null){
+      customers[randomPositionInt] = new Customer(coords[0], coords[1], 40, {r:125, g:41, b:171});
+    }
+
+    console.log(customers)
 }
 
