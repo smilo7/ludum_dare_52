@@ -44,4 +44,10 @@ function draw() {
   updateCustomers();
   
   scheduler();
+
+  //collision with wall
+  circle(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 50);
+  if (barPerson.collisionCheck(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/3, 25) == true){
+    circle(10,10,10,10);
+  }
 }
