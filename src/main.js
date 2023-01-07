@@ -32,6 +32,7 @@ function setup() {
   surgeon = new Surgeon(SCREEN_WIDTH * 3/4, SCREEN_HEIGHT * 1/3, playerWidth, playerHeight, surgeonImage)
   
   dividerWall = new Wall(SCREEN_WIDTH * 1/2, SCREEN_HEIGHT * 1/2, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
+  
 }
   
 function draw() {

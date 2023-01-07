@@ -5,7 +5,8 @@ class Player {
       this.width = width;
       this.height = height;
       this.image = image
-      this.allowMovement = true;
+      this.allowLeft = true;
+      this.allowRight = true;
     }
   
     display() {
@@ -24,30 +25,24 @@ class Player {
   
   class BarPerson extends Player {
     move() {
-      // check if the player is allowed to move
-      console.log("bar man allow movement", this.allowMovement)
       
-      if (keyIsDown(65)){
+      if (keyIsDown(65) && this.allowLeft){
         this.x -= 5;
-      } else if (keyIsDown(68) && this.allowMovement){
+      } else if (keyIsDown(68) && this.allowRight){
         this.x += 5;
       }
-      
     }
-
-
   }
   
   
   class Surgeon extends Player {
     move() {
      
-      if (keyIsDown(74) && this.allowMovement){
+      if (keyIsDown(74) && this.allowLeft){
         this.x -= 5;
-      } else if (keyIsDown(76)){
+      } else if (keyIsDown(76) && this.allowRight){
         this.x += 5;
       }
-      
     }
   }
 
