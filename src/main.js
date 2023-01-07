@@ -9,7 +9,8 @@ let surgeon;
 
 let dividerWall;
 
-let customers = [];
+let customers = [null, null, null, null];
+let patients = [null, null, null, null];
 
 
 let playerImage;
@@ -41,7 +42,11 @@ function draw() {
 
   updatePlayers();
 
-  updateCustomers();
+  displayCustomers();
+
+  displayPatients();
   
-  scheduler();
+  scheduleNPCs();
+
+  
 }
