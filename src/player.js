@@ -1,14 +1,14 @@
 class Player {
-    constructor(x, y, diameter, colour) {
+    constructor(x, y, width, height, image) {
       this.x = x;
       this.y = y;
-      this.diameter = diameter;
-      this.colour = colour; // {r:255, g:0, b:0}
+      this.width = width;
+      this.height = height;
+      this.image = image
     }
   
     display() {
-      fill(this.colour.r, this.colour.g, this.colour.b);  // Set line drawing color to white
-      circle(this.x, this.y, this.diameter)
+      image(this.image, this.x, this.y, this.width, this.height);
     }
   
    
