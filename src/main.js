@@ -24,15 +24,18 @@ function setup() {
   
   dividerWall = new Wall(SCREEN_WIDTH * 1/2, 0, SCREEN_WIDTH * 1/100, SCREEN_HEIGHT);
   testCustomer = new Customer(SCREEN_WIDTH, SCREEN_HEIGHT * 1/2, 40, {r:125, g:41, b:171})
+  testPatient = new Patient(SCREEN_WIDTH, SCREEN_HEIGHT * 1/2, 40, {r:157, g:41, b:120})
 }
   
 function draw() {
   // put drawing code here
   background(200);
   
-  // testCustomer.display()
+  //testCustomer.display();
+
+  //testPatient.display();
   
-  dividerWall.display()
+  dividerWall.display();
 
   updatePlayers();
   
