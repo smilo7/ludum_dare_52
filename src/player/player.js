@@ -34,3 +34,12 @@ class Player {
       }
     }
   }
+
+
+  function updatePlayers() {
+    barPerson.display();
+    barPerson.move();
+    surgeon.display();
+    surgeon.move()
+  }
+  
