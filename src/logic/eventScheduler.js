@@ -6,10 +6,8 @@ function scheduleNPCs () {
       for (let i = 0; i<customers.length; i++){
         if (customers[i] !== null){
           customers[i].timeTillRemoval--;
-          console.log("time till removal", i, customers[i].timeTillRemoval)
           if (customers[i].timeTillRemoval === 0){
             customers[i] = null;
-            console.log("REMOVING CUSTOMER")
           } 
         }
       }

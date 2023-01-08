@@ -1,23 +1,33 @@
 class Patient extends NPC {
-  
+  constructor(x, y, diameter, colour){
+    super(x, y, diameter, colour)
+    this.kidneys = 2;
+  }
+
   display() {
     fill(this.colour.r, this.colour.g, this.colour.b); 
     circle(this.x, this.y, this.diameter);
+  }
+
+  removeKidney(amount=1){
+    if(this.kidneys !== 0){
+      this.kidneys -= amount;
+    }
+    // console.log("kidney being removed", this.kidneys)
+    kidneyCount++;
   }
 }
 
 function displayPatients(){
   if (patients.length !== 0){
     for (let i = 0; i<patients.length; i++){
-      // only update the customer at the position at the bar if they exist!
+      // only update the patient at the position in their bed if they exist!
       if (patients[i] !== null){
         patients[i].display();
       }
     }
   }
 }
-
-
 
 function chooseRandomPatientPos(i){
 
@@ -42,5 +52,5 @@ function chooseRandomPatientPos(i){
       patients[randomPositionInt] = new Patient(coords[0], coords[1], 40, {r:20, g:41, b:160});
     }
 
-    console.log(patients)
+    // console.log(patients)
 }

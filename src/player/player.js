@@ -24,9 +24,7 @@ class Player {
   
   class BarPerson extends Player {
     move() {
-      // check if the player is allowed to move
-      console.log("bar man allow movement", this.allowMovement)
-      
+      // check if the player is allowed to move      
       if (keyIsDown(65)){
         this.x -= 5;
       } else if (keyIsDown(68) && this.allowMovement){
