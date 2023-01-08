@@ -15,10 +15,10 @@ let customers = [null, null, null, null];
 let patients = [null, null, null, null];
 
 
-let playerImage;
 function preload() {
   surgeonImage = loadImage('assets/surgeon.png');
   barPersonImage = loadImage('assets/barman.png');
+  kidneyImage = loadImage('assets/kidney.png');
 }
 
 function setup() {
@@ -43,11 +43,11 @@ function draw() {
   
   dividerWall.display();
 
-  updatePlayers();
-
   displayCustomers();
 
   displayPatients();
+
+  updatePlayers();
   
   scheduleNPCs();
 
@@ -57,14 +57,61 @@ function draw() {
   wallCollisionCheck();
 
   displayKidneyCount();
+
+  checkSurgeonPatientCollision();
+  checkBarPersonCustomerCollision();
+}
+
+function checkSurgeonPatientCollision(){
+  for (let i =0; i < patients.length; i++){
+    if (patients[i] !== null){
+      
+      if(surgeon.collisionCheck(patients[i].x, patients[i].y-50, 40)){
+
+        if (keyIsDown(75)){
+
+          patients[i].removeKidney();
+
+          if (patients[i].kidneys <= 0){
+            patients[i] = null;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+function checkBarPersonCustomerCollision(){
+  for (let i =0; i < customers.length; i++){
+    if (customers[i] !== null){
+      
+      if(barPerson.collisionCheck(customers[i].x, customers[i].y, 40)){
+        console.log("collision with customer")
+        
+        if (keyIsDown(83)){
+
+          customers[i].getGivenPie();
+
+          if (customers[i].kidneyPies >= 2){
+            customers[i] = null;
+          }
+        }
+
+      }
+
+    }
+  }
 }
 
 
 function displayKidneyCount(){
   
   fill(100,100,100);
-  // rectMode(CENTER);
   rect(SCREEN_WIDTH/2, 35, 100, 50)
+
+  image(kidneyImage,SCREEN_WIDTH/2, 35, 100, 100);
 
   textSize(32);
   fill(255,0,0);

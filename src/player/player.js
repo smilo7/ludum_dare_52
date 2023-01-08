@@ -25,7 +25,7 @@ class Player {
   
   class BarPerson extends Player {
     move() {
-      
+      // check if the player is allowed to move      
       if (keyIsDown(65) && this.allowLeft){
         this.x -= 5;
       } else if (keyIsDown(68) && this.allowRight){

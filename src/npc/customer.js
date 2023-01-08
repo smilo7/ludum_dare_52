@@ -1,9 +1,19 @@
 class Customer extends NPC {
+    constructor(x, y, diameter, colour){
+      super(x, y, diameter, colour)
+      this.kidneyPies = 0;
+    }
 
     display() {
-        fill(this.colour.r, this.colour.g, this.colour.b); 
-        circle(this.x, this.y, this.diameter);
-      }
+      fill(this.colour.r, this.colour.g, this.colour.b); 
+      circle(this.x, this.y, this.diameter);
+    }
+
+    getGivenPie(amount=1){
+      this.kidneyPies += amount;
+      // console.log("kidney being removed", this.kidneys)
+      kidneyCount--;
+    }
   }
 
 function displayCustomers(){
@@ -19,7 +29,7 @@ function displayCustomers(){
 
 function chooseRandomCustomerPos(i){
 
-    let y = SCREEN_HEIGHT * 1/2
+    let y = SCREEN_HEIGHT * 1/3
   
     const leftScreenXPositions = [
       [1/16 * SCREEN_WIDTH, y],
@@ -41,6 +51,6 @@ function spawnCustomer(){
       customers[randomPositionInt] = new Customer(coords[0], coords[1], 40, {r:125, g:41, b:171});
     }
 
-    console.log(customers)
+    // console.log(customers)
 }
 
