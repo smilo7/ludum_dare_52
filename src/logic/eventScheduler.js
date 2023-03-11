@@ -1,8 +1,9 @@
 function scheduleNPCs () {
+
+    // Every second
     if( frameCount % FPS === 0){ 
       timer++;
       // decrease time till removal for each NPC and remove any that are "expired"
-
       for (let i = 0; i<customers.length; i++){
         if (customers[i] !== null){
           customers[i].timeTillRemoval--;
@@ -28,7 +29,7 @@ function scheduleNPCs () {
     fill(0, 102, 153);
     text(timer, 50, 50);
     
-        // every 5 seconds, put a new customer in postions
+    // every 5 seconds, put a new customer in postions
     if (timer === 1){
       timer = 0 // reset timer
       spawnCustomer()

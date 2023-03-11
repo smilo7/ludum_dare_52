@@ -7,6 +7,6 @@ class NPC {
       this.y = y;
       this.diameter = diameter;
       this.colour = colour; // {r:255, g:0, b:0}
-      this.timeTillRemoval = 3;
+      this.timeTillRemoval = int(random(3,4));
     }
   }
