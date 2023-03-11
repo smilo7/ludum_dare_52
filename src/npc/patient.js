@@ -16,6 +16,10 @@ class Patient extends NPC {
     // console.log("kidney being removed", this.kidneys)
     kidneyCount++;
   }
+
+  initMinigame(){
+
+  }
 }
 
 function displayPatients(){

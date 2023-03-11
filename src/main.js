@@ -19,6 +19,8 @@ function preload() {
   surgeonImage = loadImage('assets/surgeon.png');
   barPersonImage = loadImage('assets/barman.png');
   kidneyImage = loadImage('assets/kidney.png');
+  forcepImage = loadImage('assets/forceps.png')
+  torsoImage = loadImage('assets/torso.png')
 }
 
 function setup() {

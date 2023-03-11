@@ -5,8 +5,15 @@ function checkSurgeonPatientCollision(){
         if(surgeon.collisionCheck(patients[i].x, patients[i].y-50, 40)){
   
           if (keyIsDown(75)){
-  
+            
+
+            surgeon.initMinigame();
+
+            patients[i].initMinigame();
+
+            // will change to patients[i].startMini
             patients[i].removeKidney();
+            
   
             if (patients[i].kidneys <= 0){
               patients[i] = null;
