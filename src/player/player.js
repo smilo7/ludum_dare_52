@@ -7,6 +7,7 @@ class Player {
       this.image = image
       this.allowLeft = true;
       this.allowRight = true;
+      this.minigameState = false;
     }
   
     display() {
@@ -36,6 +37,10 @@ class Player {
   
   
   class Surgeon extends Player {
+    constructor(x, y, width, height, image){
+      super(x, y, width, height, image)
+      this.forcep = null;
+    }
     move() {
      
       if (keyIsDown(74) && this.allowLeft){
@@ -44,6 +49,22 @@ class Player {
         this.x += 5;
       }
     }
+
+    initMinigame(){
+      this.forcep = new Forcep(this.x, this.y, forcepImage);
+      this.minigameState = true;
+    }
+
+    drawMinigame(){
+      this.forcep.display();
+    }
+
+    endMinigame(){
+      this.forcep = null;
+      this.minigameState = false;
+    }
+
+
 
     operate(){
         kidneyCount++;
@@ -54,10 +75,18 @@ class Player {
 
   function updatePlayers() {
 
-    barPerson.display();
-    barPerson.move();
+    // check if player is in minigame state
 
-    surgeon.display();
-    surgeon.move()
+    if (surgeon.minigameState){
+      // console.log("minigrame time")
+      surgeon.drawMinigame();
+    } else {
+      surgeon.display();
+      surgeon.move();
+    }
+    
+
+    barPerson.display();
+    barPerson.move()
   }
   
